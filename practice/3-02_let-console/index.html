@@ -18,7 +18,7 @@
 <main>
 <div class="container">
 <section>
-    <p id="choice">ここに日時を表示します</p>
+
 </section>
 </div><!-- /.container -->
 </main>
@@ -28,9 +28,14 @@
 </div><!-- /.container -->
 </footer>
 <script>
-    'use strict';
-    document.getElementById('choice').textContent = new Date();
-    console.log(document.getElementById('choice').textContent = new Date());
+    'use strict'
+
+    const answer = window.prompt('プリパラを見ますか？');
+    if(answer === 'yes') {
+        window.alert('真中さいこ');
+    }   else{
+        window.alert('やっぱ弱ペダだよね');
+    }
 </script>
 </body>
 </html>

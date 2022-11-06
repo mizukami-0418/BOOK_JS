@@ -18,7 +18,7 @@
 <main>
 <div class="container">
 <section>
-    <p id="choice">ここに日時を表示します</p>
+
 </section>
 </div><!-- /.container -->
 </main>
@@ -29,8 +29,15 @@
 </footer>
 <script>
     'use strict';
-    document.getElementById('choice').textContent = new Date();
-    console.log(document.getElementById('choice').textContent = new Date());
+
+    const answer = window.prompt('ヘルプを見ますか？');
+    if(answer === 'yes') {
+        window.alert('タップでジャンプ、障害物を避けます。');
+    }   else if(answer === 'no') {
+        window.alert('ゲーム起動中');
+    }   else {
+        window.alert('yesかnoでお答え草');
+    }
 </script>
 </body>
 </html>
