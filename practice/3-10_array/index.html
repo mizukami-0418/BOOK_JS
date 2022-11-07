@@ -18,7 +18,9 @@
 <main>
 <div class="container">
 <section>
-
+    <h1>やることリスト</h1>
+    <ul id="list">
+    </ul>
 </section>
 </div><!-- /.container -->
 </main>
@@ -30,10 +32,11 @@
 <script>
     'use strict';
 
-    let i = 1;
-    while(i <= 10) {
-        console.log(i + '枚');
-        i += 1;
+    let todo = ['デザイン作成', 'ドラえもん', 'ゲーム', 'トイレ'];
+    todo.push('勉強する');
+    for(let item of todo) {
+        const li = `<li>${item}</li>`;
+        document.getElementById('list').insertAdjacentHTML('beforeend', li);
     }
 </script>
 </body>
