@@ -18,10 +18,13 @@
 <main>
 <div class="container">
 <section>
-    <h1>やることリスト</h1>
-    <ul id="list">
-        <li>ドラえもん</li>
-    </ul>
+    <table>
+        <tr>
+            <tb id="title"></tb>
+            <tb id="price"></tb>
+            <tb id="stock"></tb>
+        </tr>
+    </table>
 </section>
 </div><!-- /.container -->
 </main>
@@ -33,12 +36,21 @@
 <script>
     'use strict';
 
-    let todo = ['デザイン作成', 'ドラえもん', 'ゲーム', 'トイレ'];
-    todo.push('勉強する');
-    for(let item of todo) {
-        const li = `<li>${item}</li>`;
-        document.getElementById('list').insertAdjacentHTML('beforeend', li);
+    let manga = {title: 'ドラゴンボール', price: 360, stock: 1};
+    /*
+    console.log(manga);
+    console.log(manga.title);
+    console.log(manga['price']);
+    manga.stock = 10;
+    console.log(manga.stock);
+
+    for(let p in manga) {
+        console.log(p + "=" + manga[p]);
     }
+    */
+    document.getElementById('title').textContent = manga.title;
+    document.getElementById('price').textContent = manga.price + '円';
+    document.getElementById('stock').textContent = manga.stock;
 </script>
 </body>
 </html>
