@@ -11,14 +11,14 @@
 <body>
 <header>
 <div class="container">
-<h1>タイトルわかりやすく日時を表示する</h1>
-<h2>年月日と日時を表示する</h2>
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
 </div><!-- /.container -->
 </header>
 <main>
 <div class="container">
 <section>
-    <p>最終アクセス日時：<span id="time"></span></p>
+
 </section>
 </div><!-- /.container -->
 </main>
@@ -27,24 +27,5 @@
 <p>JavaScript Samples</p>
 </div><!-- /.container -->
 </footer>
-<script>
-    'use strict';
-
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
-    const date = now.getDate();
-    const hour = now.getHours();
-    const min = now.getMinutes();
-    let ampm = '';
-    if(hour < 12) {
-        ampm = 'a.m.';
-    } else {
-        ampm = 'p.m.'
-    }
-
-    const output = `${year}/${month + 1}/${date}${hour % 12}:${min}${ampm}`;
-    document.getElementById('time').textContent = output;
-</script>
 </body>
 </html>
