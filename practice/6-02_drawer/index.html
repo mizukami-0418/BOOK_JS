@@ -69,5 +69,15 @@
   </ul>
 </nav>
 
+<script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+<script>
+  'use strict';
+
+  $(document).ready(function() {
+    $('#open_nav').on('click', function() {
+      $('#wrapper, #nav').toggleClass('show');
+    });
+  });
+</script>
 </body>
 </html>
