@@ -75,5 +75,36 @@
 <p>JavaScript Samples</p>
 </div><!-- /.container -->
 </footer>
+<script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+<script>
+  'use strict';
+
+  $(document).ready(function(){
+    // ファイルの読み込み
+    $.ajax({url: 'data.json', dataType: 'json'})
+    .done(function(data){
+      // console.log(data);
+      data.forEach(function(item, index){
+        // console.log(item);
+        if(item.crowded === 'yes') {
+          const idName = '#' + item.id;
+          $(idName).find('.check').addClass('crowded');
+        }
+      });
+    })
+    .fail(function(){
+      window.alert('読み込みエラー');
+    });
+
+    // クリックされたら空席状況を表示
+    $('.check').on('click', function(){
+      if($(this).hasClass('crowded')){
+        $(this).text('残りわずか').addClass('red');
+      } else {
+        $(this).text('席があります').addClass('green');
+      }
+    });
+  });
+</script>
 </body>
 </html>
